@@ -1,0 +1,57 @@
+{
+    "name": "zine/noah",
+    "description": "laravel admin",
+    "type": "library",
+    "keywords": ["laravel", "admin", "grid", "form"],
+    "homepage": "https://github.com/hezhiying/noah",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zine",
+            "email": "21418592@qq.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "symfony/dom-crawler": "~3.1|~4.0",
+        "laravel/framework": "~5.5",
+        "doctrine/dbal": "2.*"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Zine\\Noah\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\Models\\": "tests/models",
+            "Tests\\Controllers\\": "tests/controllers"
+        },
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "scripts": {
+        "test": "./vendor/bin/phpunit"
+    },
+    "suggest": {
+        "intervention/image": "Required to handling and manipulation upload images (~2.3).",
+        "spatie/eloquent-sortable": "Required to built orderable gird."
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Zine\\Noah\\NoahServiceProvider"
+            ],
+            "aliases": {
+                "Noah": "Zine\\Noah\\Facades\\Noah"
+            }
+
+        }
+    }
+}
